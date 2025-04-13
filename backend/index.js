@@ -22,7 +22,7 @@ app.use("/booking",bookingRouter);
 app.use("/theater",theaterRouter);
 app.use("/show",showRouter);
 
-mongoose.connect(`mongodb+srv://admin:${process.env.MONGODB_PASSWORD}@cluster0.3oidq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`)
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => 
     {
         app.listen(5000,()=>{console.log("Connected To Database And Server is running")})
